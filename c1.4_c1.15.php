@@ -103,3 +103,4 @@ $remove = $tk - 150000;
 
 $message = ($age >= 18 ) ? ((150000 <= $tk ) ? "{$tk} tk is enough and you can remove {$remove} tk" : "Not enough and extra {$need} tk need") : 'Not eligible to buy this Bick';
 echo $message ."\n";
+
