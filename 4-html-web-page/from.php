@@ -35,6 +35,9 @@ header('X-XSS-Protection:0'); // ai function ar jono chorom auto XSS protection/
                     <li><a href="/">Home</a></li>
                     <li><a href="from.php">From</a></li>
                     <li><a href="from1.php">From 1</a></li>
+                    <li><a href="select.php">Select</a></li>
+                    <li><a href="file.php">File</a></li>
+                    <li><a href="files.php">Files</a></li>
                 </ul>
             </div>
         </div>
