@@ -17,7 +17,7 @@ session_start([
  $_SESSION['name'] = 'Ruby';
 echo $_SESSION['name'];
 
-9 session done without 9.6-9.8
+// 9 session done without 9.6-9.8
 
 
 
