@@ -1,0 +1,103 @@
+<!--
+    <?php 
+// AJAX = Asynchronous JavaScript And XML
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- Google Fonts -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"> -->
+
+<!-- CSS Reset -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"> -->
+
+<!-- Milligram CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"> -->
+
+<!-- You should properly set the path from the main file. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        pre#result {
+            background: #efefef;
+            width: 400px;
+            height: 400px;
+        }
+
+        .row {
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            display: flex;
+        }
+        .t-center {
+            text-align: center;
+        }
+        input#send {
+            padding: 10px 31px;
+            background: #0c771e;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        input#send:hover {
+            background: #137cd6;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="maintitle t-center"><i class="fa fa-heartbeat"></i> | <i class="fab fa-galactic-senate"></i> | <i class="fas fa-biohazard"></i> | <i class="fas fa-alien"></i></h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!--column-offset-20 col-md-4 -->
+            <div class="column column-50 data-trigger">
+                <h4>Trigger</h4>
+                <form action="">
+                    <input type="button" id="send" value="Send Data">
+                </form>
+            </div>
+            <!--column-offset-20 col-md-8 -->
+            <div class="column column-50 data-value">
+                <pre id="result"></pre>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function sendData(){
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "data1.php",true);
+        xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+        );
+        xhr.onreadystatechange = function() {
+            if(this.readyState ===4 && this.status===200){
+                document.getElementById('result').innerHTML = this.responseText;
+
+                var response = JSON.parse(this.responseText);
+                console.log(response.result);
+            };
+        }
+        xhr.send("foo=bar&hello=world");
+    }
+    document.getElementById('send').addEventListener('click',function(){
+        sendData();
+    });
+</script>
+</html>
+
+
