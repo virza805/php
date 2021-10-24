@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit 
+    bootstrap = "vendor/autoload.php"
+    colors                      = "true"
+    stopOnFailure               = "false">
+
+    <testsuites>  
+        <testsuite name="Our Test Suite">
+            <directory>tests</directory>    <!-- ./vendor/bin/phpunit tests |=> run this commend =< ./vendor/bin/phpunit-->
+        </testsuite>
+    </testsuites>
+
+</phpunit>
+
+ <!-- ./vendor/bin/phpunit - -help |=> run this commend for show all configaration -->
