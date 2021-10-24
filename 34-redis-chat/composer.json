@@ -1,0 +1,8 @@
+{
+    "require": {
+        "predis/predis": "^1.1",
+        "components/jquery": "^3.6",
+        "twbs/bootstrap": "^5.1",
+        "fortawesome/font-awesome": "^5.15"
+    }
+}
