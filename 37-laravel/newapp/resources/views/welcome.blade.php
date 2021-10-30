@@ -3,7 +3,7 @@
 @section('body')
  <div class="container">
       <div class="row  justify-content-center">
-          <div class="col-md-12 text-light text-center">
+          <div class="col-md-12 text-center">
             <main role="main" class="inner cover m-5 p-5">
                 <h1 class="cover-heading">Features page.</h1>
                 <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>

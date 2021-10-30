@@ -5,3 +5,4 @@
 
 // php artisan make:controller MainController
 
+// php artisan migrate
