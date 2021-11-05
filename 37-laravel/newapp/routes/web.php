@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\MainController;
 Route::get('/',[MainController::class, 'main']);
 Route::get('/features',[MainController::class, 'features']);
 Route::get('/contact',[MainController::class, 'contact']);
+Route::get('/allpeople',[MainController::class, 'allPeople']);
+Route::get('/form',[MainController::class, 'displayForm'])->name("form.create");
+Route::post('/save',[MainController::class, 'saveForm'])->name("form.save");
 
 // Route::get('/hello/world', 'app\Http\Controllers\MainController@sayHi');
 /*

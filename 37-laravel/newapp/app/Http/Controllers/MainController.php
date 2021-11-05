@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -15,7 +16,17 @@ class MainController extends Controller
     function contact(){
         return view("contact");
     }
-    // function sayHi(){
-    //     return "hello world -> from the controller";
-    // }
+    function allPeople(){
+        // return ((array) DB::table('tname')->where('id', '>' , 1)->first());
+        return ( DB::table('tname')
+        ->select(['id', 'name'])
+        ->where('id', '>' , 1)
+        ->where('id', '<' , 3)
+        ->orderBy('id', 'desc')
+        ->limit(3)
+        ->get() );
+
+        // return (DB::select("select id, name from tname"));
+    }
+
 }
